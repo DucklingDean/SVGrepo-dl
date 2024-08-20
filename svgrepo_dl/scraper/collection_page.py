@@ -1,9 +1,9 @@
-from .scraper_core              import ScraperCore
+from .page_nav import PageNav
 
 
 
 
-class CollectionPage(ScraperCore):
+class CollectionPage(PageNav):
     """
     page with URL like: 'svgrepo.com/collection/**'
     """
