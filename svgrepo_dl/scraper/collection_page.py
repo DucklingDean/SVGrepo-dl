@@ -10,7 +10,8 @@ class CollectionPage(ScraperCore):
     """
     _images    :list[dict]  = None
     _collection:str         = None
-    _nextpage  :str|None   = None
+    _nextpage  :str|None    = None
+    _pagecount :int         = None
     
 
     @property 
@@ -54,7 +55,12 @@ class CollectionPage(ScraperCore):
         return self._nextpage
                            
 
-        
+    @property
+    def pagecount(self) -> int:
+        """How many pages collection has"""
+        if self._pagecount is None:
+            self._pagecount = self._get_pagecount()
+        return self._pagecount
 
 
 
@@ -87,3 +93,10 @@ class CollectionPage(ScraperCore):
 
         except AttributeError:
             return None
+
+
+    def _get_pagecount(self) -> int:
+        return int(
+            self._tree.css_first(".style_pagingCarrier__NVbHL span").text()\
+            .split("/")[-1].strip() 
+        )
