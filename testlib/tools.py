@@ -1,6 +1,7 @@
+from collections.abc import Callable
 from .config        import PRINT_TEST
 from rich.pretty    import pprint 
-
+from typing         import Callable
 
 
 
@@ -18,6 +19,14 @@ def pp(*args):
             max_length=4, 
             expand_all=True
         )
+
+
+def test_cases(func:Callable) -> Callable:
+    """Will loop through `self.cases and` pass the case as an args"""
+    def wrapper(self) -> None:
+        for case_ in self.cases:
+            func(self, case_)
+    return wrapper
 
 # to avoid uplaoding html to the repo, & and easy to redownload those files. 
 def download_html() -> None:
