@@ -17,11 +17,13 @@ class TestCollectionPage(TestCase):
 
 
 
+
     @test_cases
     def test_images_property(self, clss:CollectionPage) -> None:
         imgs   = clss.images
         self.assertTrue(len(imgs)>0, "empty image list [].")
         pp(imgs)
+
 
     @test_cases
     def test_collection_property(self, clss:CollectionPage) -> None:
@@ -29,6 +31,7 @@ class TestCollectionPage(TestCase):
         self.assertTrue(len(title)>0, "empty title.")
         self.assertEqual(clss.collection, clss.title)
         pp(title)
+
 
     @test_cases
     def test_next_page_property(self, clss:CollectionPage) -> None:        
@@ -53,11 +56,11 @@ class TestCollectionPage(TestCase):
 
 
     @test_cases
-    def test_pagecount_property(self, clss:CollectionPage) -> None:
-        pagecount = clss.pagecount
-        self.assertEqual(type(pagecount), int, "`CollectionPage.pagecount` should be an 'int'.")
-        self.assertGreater(pagecount, 0)
-        pp({'page count':pagecount})
+    def test_totalpages_property(self, clss:CollectionPage) -> None:
+        total_pages = clss.total_pages
+        self.assertEqual(type(total_pages), int, "`CollectionPage.pagecount` should be an 'int'.")
+        self.assertGreater(total_pages, 0)
+        pp({'total_pages':total_pages})
 
 
     
