@@ -2,5 +2,8 @@
   "collection_page(1-page).html"         :"https://www.svgrepo.com/collection/biological-gene-duotone-icons/",
   "collection_page(4-pages).html"        :"https://www.svgrepo.com/collection/fontaudio-line-icons/",
   "collection_page(21-pages).html"       :"https://www.svgrepo.com/collection/font-awesome-solid-icons/",
-  "collection_page(4-pages)(page=3).html":"https://www.svgrepo.com/collection/colored-interface-and-logo-icons/3"
+  "collection_page(4-pages)(page=3).html":"https://www.svgrepo.com/collection/colored-interface-and-logo-icons/3",
+
+  "home_page(page=1).html" :"https://www.svgrepo.com/",
+  "home_page(page=10).html":"https://www.svgrepo.com/collections/all/10"
 }
