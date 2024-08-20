@@ -10,11 +10,11 @@ class ScraperCore:
     _images    : list[dict]  = None
     _next_page : str|None    = None
     _prev_page : str|None    = None
-    _page_count: int         = None
+    _total_pages: int         = None
 
 
     _get_next_prev  = lambda self, index: self._tree.css(".style_pagingCarrier__NVbHL > div")[index].css_first("a")
-    _get_page_count = lambda self: int(self._tree.css_first(".style_pagingCarrier__NVbHL span").text().split("/")[-1].strip())
+    _get_total_pages = lambda self: int(self._tree.css_first(".style_pagingCarrier__NVbHL span").text().split("/")[-1].strip())
 
 
 
@@ -45,11 +45,11 @@ class ScraperCore:
 
 
     @property
-    def page_count(self) -> int:
+    def total_pages(self) -> int:
         """How many pages collection has"""
-        if self._page_count is None:
-            self._page_count = self._get_page_count()
-        return self._page_count
+        if self._total_pages is None:
+            self._total_pages = self._get_total_pages()
+        return self._total_pages
 
 
 
@@ -86,7 +86,7 @@ class ScraperCore:
     def prevpage(self) -> str|None: return self.prev_page
 
     @property
-    def pagecount(self) -> int: return self.page_count
+    def totalpages(self) -> int: return self.total_pages
 
 
 
