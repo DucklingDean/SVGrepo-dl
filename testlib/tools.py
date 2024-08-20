@@ -14,7 +14,7 @@ def pp(*args):
     if PRINT_TEST:
         pprint(
             *args,
-            max_depth=2, 
+            max_depth=4, 
             max_string=70, 
             max_length=4, 
             expand_all=True

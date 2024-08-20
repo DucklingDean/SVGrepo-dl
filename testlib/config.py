@@ -1,1 +1,1 @@
-PRINT_TEST:bool = True
+PRINT_TEST:bool = not True
