@@ -1,3 +1,5 @@
+import collections
+from collections.abc import Collection
 from re import split
 from svgrepo_dl.toolkit.globals import HTTPS_URL
 from selectolax.parser          import Node
@@ -48,8 +50,9 @@ class HomePage(PageNav):
         [
             {
             "title" :"...",
-            "url"   :"..."
-            "images":[]
+            "url"   :"...",
+            "images":[],
+            "total-images":"..."
             }
         ]
         """
