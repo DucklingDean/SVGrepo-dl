@@ -1,6 +1,4 @@
-from setuptools import setup
-
-    
+from setuptools import setup, find_packages
 
 
 
@@ -12,11 +10,18 @@ setup(
     #long_description_content_type = 'text/markdown',
     author           ='Duckling Dean',
     author_email     ='duckling.dean@proton.me',
-    packages         =["svgrepo_dl",],
+    package_dir      ={'': 'src'},
+    packages         =find_packages(where='src'),
+    include_package_data=True,
+    project_urls     ={
+        "Source" : "https://github.com/DucklingDean/SVGrepo-dl",
+    },
+
+
     #install_requires = [
-    #    "requests>=2.32.2,<3.0.0",
-    #   "fake-useragent==1.5.1",
-    #]
+    #   "requests>=2.32.2,<3.0.0",
+    #   "reqio"
+    # ]
 )
 
 
