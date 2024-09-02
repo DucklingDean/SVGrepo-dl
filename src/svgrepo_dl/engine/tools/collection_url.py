@@ -9,9 +9,9 @@ from svgrepo_dl.toolkit import Color as cl
 def match_pattern(url:str, verbose:bool) -> bool:
     pattern   = r"^https://www\.svgrepo\.com/collection/[^/]+$"
     if is_pattern_matched(pattern, url): return True
-    cl.p(cl.R, cl.BOLD,"Bad URL:", url)
+    cl.p(cl.BOLD, cl.R, "Bad URL:", url)
     if verbose:
-        cl.p(cl.BOLD, "   | doesn't match pattern:", cl.R, "\"https://www.svgrepo.com/collection/*\"")
+        cl.p(cl.BOLD, "   | doesn't match pattern:", cl.R, "\"https://www.svgrepo.com/collection/*\"\n")
     return False
 
 
@@ -23,12 +23,12 @@ def check_status_code(url:str, verbose:bool) -> bool:
     stcode = HEAD(url, headers=headers).status_code
 
     if stcode == 200:
-        cl.p(cl.G, cl.BOLD, "200:", url)
+        cl.p(cl.BOLD, cl.G, "200:", url)
         return True
     elif stcode == 500:
-        cl.p(cl.R, cl.BOLD, "404:", url)
+        cl.p(cl.BOLD, cl.R, "404:", url)
         if verbose:
-            cl.p(cl.BOLD, "   | doesn't exist in 'svgrepo.com':", cl.BOLD, 'status_code=', cl.R, '500')
+            cl.p(cl.BOLD, "   | doesn't exist in 'svgrepo.com':", cl.BOLD, 'status_code=', cl.R, '500\n')
 
     return False
 

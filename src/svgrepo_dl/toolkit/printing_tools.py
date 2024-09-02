@@ -9,7 +9,7 @@ __all__ = [
 
 
 class Color:
-    _ALL = {"\033[30m", "\033[31m", "\033[32m", "\033[33m", "\033[34m", "\033[35m", "\033[36m", "\033[37m", "\033[38m" }
+
     GREY = '\033[30m' 
     BOLD = '\033[1m'
     DEF  = '\033[0m'
@@ -28,7 +28,7 @@ class Color:
         p = lambda txt: print(txt, end="")
 
         for a in args:
-            if a in Color._ALL: 
+            if a.startswith('\033['): 
                 p(a)
             else: 
                 p(a+" "+Color.DEF)
