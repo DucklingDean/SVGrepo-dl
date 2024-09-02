@@ -34,7 +34,7 @@ def check_status_code(url:str, verbose:bool) -> bool:
 
     
 
-def check_collection_url_list(clltion_list:list[str], verbose:bool) -> list[str]:
+def true_exists_collection_url(clltion_list:list[str], verbose:bool) -> list[str]:
     pure_list = []
   
     for url in clltion_list:   

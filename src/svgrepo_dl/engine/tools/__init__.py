@@ -1,8 +1,8 @@
-from .check_collection_url    import check_collection_url_list 
+from .collection_url          import true_exists_collection_url
 from .extract_all_collections import extract_all_collections
 
 
 __all__ = [
-    'check_collection_url_list',
+    'true_exists_collection_url',
     'extract_all_collections',
 ]
