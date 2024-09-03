@@ -1,4 +1,4 @@
-from svgrepo_dl.engine import true_exists_collection_url
+from svgrepo_dl.engine.utils import true_exists_collection_url
 from unittest          import TestCase, result
 
 
