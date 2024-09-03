@@ -18,10 +18,13 @@ setup(
     },
 
 
-    #install_requires = [
-    #   "requests>=2.32.2,<3.0.0",
-    #   "reqio"
-    # ]
+    install_requires = [
+       "requests>=2.32.2,<3.0.0",
+       "reqio==0.1.0.0",
+       "click==8.1.7",
+       "selectolax==0.3.21",
+       "tqdm==4.66.5"
+    ]
 )
 
 
